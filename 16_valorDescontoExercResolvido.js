@@ -7,7 +7,7 @@
 function imprimirValorDesconto(valorDaCompra, hora, cupom){
   let valorDesconto;
   if(cupom === "RANGOBARATO") {
-    if(hora >= 12 && hora <= 14) {
+    if(hora >= 12 && hora < 14) {
       if(valorDaCompra >= 100) {
         valorDesconto = valorDaCompra * 20/100;
       } else{
@@ -23,5 +23,10 @@ function imprimirValorDesconto(valorDaCompra, hora, cupom){
     console.log("Este cupom não é aplicável");
   }
 }
+ //o formato do horário não está configurado para receber minutos
 
-imprimirValorDesconto(150, 13, "RANGOBARATO");
+ imprimirValorDesconto(25, 12, "RANGOBARATO");
+ imprimirValorDesconto(125, 14, "RANGOBARATO");
+ imprimirValorDesconto(250, 12, "RANGOsnBARATO");
+ imprimirValorDesconto(100, 12, "RANGOBARATO");
+ imprimirValorDesconto(120, 13, "RANGOBARATO");
